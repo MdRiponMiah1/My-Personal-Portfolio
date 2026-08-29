@@ -1,0 +1,264 @@
+{% extends 'projects/base.html' %}
+
+
+{% block title %}
+{{ project.title }} | Md Ripon Miah
+{% endblock %}
+
+
+{% block content %}
+
+<section class="project-detail-page">
+
+    <div class="container">
+
+
+        <!-- TOP NAVIGATION -->
+
+        <div class="project-detail-top">
+
+            <a
+                href="{% url 'project_list' %}"
+                class="project-back-link"
+            >
+
+                <span>
+                    ←
+                </span>
+
+                Back to projects
+
+            </a>
+
+
+            <span class="project-detail-label">
+
+                PROJECT
+                / 0{{ project.id }}
+
+            </span>
+
+        </div>
+
+
+
+        <!-- PROJECT HEADER -->
+
+        <div class="project-detail-header">
+
+
+            <div class="project-detail-heading">
+
+                <div class="section-label">
+
+                    <span>
+                        01
+                    </span>
+
+                    FEATURED PROJECT
+
+                </div>
+
+
+                <h1>
+
+                    {{ project.title }}
+
+                </h1>
+
+
+                <p>
+
+                    {{ project.description }}
+
+                </p>
+
+            </div>
+
+
+
+            <a
+                href="{{ project.github_link }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-github-button"
+            >
+
+                <span>
+                    GitHub
+                </span>
+
+                <strong>
+                    ↗
+                </strong>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- PROJECT IMAGE -->
+
+        {% if project.image %}
+
+        <div class="project-detail-visual">
+
+            <img
+                src="{{ project.image }}"
+                alt="{{ project.title }}"
+            >
+
+        </div>
+
+        {% endif %}
+
+
+
+        <!-- PROJECT INFORMATION -->
+
+        <div class="project-detail-info">
+
+
+            <!-- TECHNOLOGY -->
+
+            <div class="project-info-block">
+
+                <span class="project-info-label">
+                    TECHNOLOGY
+                </span>
+
+
+                <div class="project-info-value">
+
+                    {{ project.technology }}
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROJECT -->
+
+            <div class="project-info-block">
+
+                <span class="project-info-label">
+                    TYPE
+                </span>
+
+
+                <div class="project-info-value">
+
+                    Web Application
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SOURCE -->
+
+            <div class="project-info-block">
+
+                <span class="project-info-label">
+                    SOURCE
+                </span>
+
+
+                <a
+                    href="{{ project.github_link }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-source-link"
+                >
+
+                    View on GitHub
+
+                    <span>
+                        ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- DESCRIPTION -->
+
+        <div class="project-description-section">
+
+
+            <div class="project-description-label">
+
+                ABOUT THE PROJECT
+
+            </div>
+
+
+            <div class="project-description-content">
+
+                <h2>
+                    What I built.
+                </h2>
+
+
+                <p>
+
+                    {{ project.description }}
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BOTTOM NAVIGATION -->
+
+        <div class="project-detail-bottom">
+
+
+            <a
+                href="{% url 'project_list' %}"
+                class="project-bottom-link"
+            >
+
+                <span>
+                    ←
+                </span>
+
+                All projects
+
+            </a>
+
+
+            <a
+                href="{{ project.github_link }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-bottom-github"
+            >
+
+                Open GitHub
+
+                <span>
+                    ↗
+                </span>
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+{% endblock %}

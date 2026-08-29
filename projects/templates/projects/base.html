@@ -1,0 +1,699 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" data-theme="midnight">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Md Ripon Miah — Full Stack Developer portfolio built with Django, React and AI."
+    >
+
+    <title>
+        {% block title %}
+            Md Ripon Miah | Full Stack Developer
+        {% endblock %}
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{% static 'projects/css/style.css' %}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <div class="container navbar-inner">
+
+
+                <!-- LOGO + PORTFOLIO NAME -->
+
+                <a
+                    href="{% url 'home' %}"
+                    class="brand"
+                    aria-label="My Personal Portfolio Home"
+                >
+
+                    <span class="brand-mark">
+
+                        <img
+                            src="{% static 'projects/images/profile.jpg' %}"
+                            alt="Md Ripon Miah"
+                        >
+
+                    </span>
+
+
+                    <span class="brand-name">
+                        My Personal Portfolio
+                    </span>
+
+                </a>
+
+
+                <!-- DESKTOP NAVIGATION -->
+
+                <div class="desktop-nav">
+
+                    <a
+                        href="{% url 'home' %}"
+                        class="nav-link"
+                    >
+                        Home
+                    </a>
+
+
+                    <a
+                        href="{% url 'about' %}"
+                        class="nav-link"
+                    >
+                        About
+                    </a>
+
+
+                    <a
+                        href="{% url 'project_list' %}"
+                        class="nav-link"
+                    >
+                        Projects
+                    </a>
+
+
+                    <a
+                        href="{% url 'home' %}#contact"
+                        class="nav-link"
+                    >
+                        Contact
+                    </a>
+
+                </div>
+
+
+                <!-- RIGHT SIDE -->
+
+                <div class="navbar-actions">
+
+
+                    <!-- THEME SWITCHER -->
+
+                    <div class="theme-switcher">
+
+                        <button
+                            type="button"
+                            class="theme-button"
+                            id="themeToggle"
+                            aria-label="Change color theme"
+                            aria-expanded="false"
+                        >
+
+                            <span
+                                class="theme-icon"
+                                id="themeIcon"
+                            >
+                                ◐
+                            </span>
+
+
+                            <span
+                                class="theme-current"
+                                id="themeCurrent"
+                            >
+                                Midnight
+                            </span>
+
+
+                            <span class="theme-chevron">
+                                ↓
+                            </span>
+
+                        </button>
+
+
+                        <div
+                            class="theme-menu"
+                            id="themeMenu"
+                        >
+
+                            <button
+                                type="button"
+                                class="theme-option active"
+                                data-theme="midnight"
+                            >
+
+                                <span class="theme-option-dot midnight-dot"></span>
+
+                                <span>
+                                    Midnight
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="theme-option"
+                                data-theme="aurora"
+                            >
+
+                                <span class="theme-option-dot aurora-dot"></span>
+
+                                <span>
+                                    Aurora
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="theme-option"
+                                data-theme="minimal"
+                            >
+
+                                <span class="theme-option-dot minimal-dot"></span>
+
+                                <span>
+                                    Minimal
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MOBILE MENU BUTTON -->
+
+                    <button
+                        type="button"
+                        class="mobile-menu-button"
+                        id="mobileMenuButton"
+                        aria-label="Open navigation menu"
+                        aria-expanded="false"
+                    >
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+        <!-- MOBILE NAVIGATION -->
+
+        <div
+            class="mobile-nav"
+            id="mobileNav"
+        >
+
+            <div class="container mobile-nav-inner">
+
+                <a
+                    href="{% url 'home' %}"
+                    class="mobile-nav-link"
+                >
+                    Home
+                </a>
+
+
+                <a
+                    href="{% url 'about' %}"
+                    class="mobile-nav-link"
+                >
+                    About
+                </a>
+
+
+                <a
+                    href="{% url 'project_list' %}"
+                    class="mobile-nav-link"
+                >
+                    Projects
+                </a>
+
+
+                <a
+                    href="{% url 'home' %}#contact"
+                    class="mobile-nav-link"
+                >
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main>
+
+        {% block content %}
+
+        {% endblock %}
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-top">
+
+
+                <!-- FOOTER BRAND -->
+
+                <div class="footer-brand">
+
+                    <a
+                        href="{% url 'home' %}"
+                        class="footer-logo"
+                        aria-label="My Personal Portfolio Home"
+                    >
+
+                        <span class="footer-logo-mark">
+
+                            <img
+                                src="{% static 'projects/images/profile.jpg' %}"
+                                alt="Md Ripon Miah"
+                            >
+
+                        </span>
+
+
+                        <span class="footer-logo-name">
+                            My Personal Portfolio
+                        </span>
+
+                    </a>
+
+
+                    <p>
+                        Full Stack Web Development
+                        learner focused on Django,
+                        React and AI.
+                    </p>
+
+                </div>
+
+
+                <!-- FOOTER LINKS -->
+
+                <div class="footer-links">
+
+                    <a href="{% url 'home' %}">
+                        Home
+                    </a>
+
+
+                    <a href="{% url 'project_list' %}">
+                        Projects
+                    </a>
+
+
+                    <a href="{% url 'about' %}">
+                        About
+                    </a>
+
+
+                    <a href="{% url 'home' %}#contact">
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER BOTTOM -->
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 Md Ripon Miah.
+                    All rights reserved.
+                </p>
+
+
+                <span>
+                    Built with Django
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         THEME + NAVBAR SCRIPT
+    ====================================================== -->
+
+    <script>
+
+        const html =
+            document.documentElement;
+
+
+        const themeToggle =
+            document.getElementById(
+                'themeToggle'
+            );
+
+
+        const themeMenu =
+            document.getElementById(
+                'themeMenu'
+            );
+
+
+        const themeCurrent =
+            document.getElementById(
+                'themeCurrent'
+            );
+
+
+        const themeIcon =
+            document.getElementById(
+                'themeIcon'
+            );
+
+
+        const themeOptions =
+            document.querySelectorAll(
+                '.theme-option'
+            );
+
+
+        const mobileMenuButton =
+            document.getElementById(
+                'mobileMenuButton'
+            );
+
+
+        const mobileNav =
+            document.getElementById(
+                'mobileNav'
+            );
+
+
+
+        /* =================================================
+           THEME CONFIG
+        ================================================= */
+
+        const themes = {
+
+            midnight: {
+                name: 'Midnight',
+                icon: '◐'
+            },
+
+            aurora: {
+                name: 'Aurora',
+                icon: '✦'
+            },
+
+            minimal: {
+                name: 'Minimal',
+                icon: '○'
+            }
+
+        };
+
+
+
+        /* =================================================
+           APPLY THEME
+        ================================================= */
+
+        function applyTheme(theme) {
+
+            html.setAttribute(
+                'data-theme',
+                theme
+            );
+
+
+            localStorage.setItem(
+                'portfolio-theme',
+                theme
+            );
+
+
+            themeCurrent.textContent =
+                themes[theme].name;
+
+
+            themeIcon.textContent =
+                themes[theme].icon;
+
+
+            themeOptions.forEach(
+                option => {
+
+                    option.classList.toggle(
+                        'active',
+                        option.dataset.theme === theme
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =================================================
+           LOAD SAVED THEME
+        ================================================= */
+
+        const savedTheme =
+            localStorage.getItem(
+                'portfolio-theme'
+            );
+
+
+        if (
+            savedTheme &&
+            themes[savedTheme]
+        ) {
+
+            applyTheme(
+                savedTheme
+            );
+
+        } else {
+
+            applyTheme(
+                'midnight'
+            );
+
+        }
+
+
+
+        /* =================================================
+           THEME MENU
+        ================================================= */
+
+        themeToggle.addEventListener(
+            'click',
+            function(event) {
+
+                event.stopPropagation();
+
+
+                const isOpen =
+                    themeMenu.classList.toggle(
+                        'show'
+                    );
+
+
+                themeToggle.setAttribute(
+                    'aria-expanded',
+                    isOpen
+                );
+
+            }
+        );
+
+
+
+        /* =================================================
+           SELECT THEME
+        ================================================= */
+
+        themeOptions.forEach(
+            option => {
+
+                option.addEventListener(
+                    'click',
+                    function() {
+
+                        const selectedTheme =
+                            this.dataset.theme;
+
+
+                        applyTheme(
+                            selectedTheme
+                        );
+
+
+                        themeMenu.classList.remove(
+                            'show'
+                        );
+
+
+                        themeToggle.setAttribute(
+                            'aria-expanded',
+                            'false'
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* =================================================
+           CLOSE THEME MENU
+        ================================================= */
+
+        document.addEventListener(
+            'click',
+            function(event) {
+
+                if (
+                    !themeToggle.contains(event.target) &&
+                    !themeMenu.contains(event.target)
+                ) {
+
+                    themeMenu.classList.remove(
+                        'show'
+                    );
+
+
+                    themeToggle.setAttribute(
+                        'aria-expanded',
+                        'false'
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* =================================================
+           MOBILE MENU
+        ================================================= */
+
+        mobileMenuButton.addEventListener(
+            'click',
+            function() {
+
+                const isOpen =
+                    mobileNav.classList.toggle(
+                        'show'
+                    );
+
+
+                mobileMenuButton.classList.toggle(
+                    'active',
+                    isOpen
+                );
+
+
+                mobileMenuButton.setAttribute(
+                    'aria-expanded',
+                    isOpen
+                );
+
+            }
+        );
+
+
+
+        /* =================================================
+           CLOSE MOBILE MENU
+        ================================================= */
+
+        document.querySelectorAll(
+            '.mobile-nav-link'
+        ).forEach(
+            link => {
+
+                link.addEventListener(
+                    'click',
+                    function() {
+
+                        mobileNav.classList.remove(
+                            'show'
+                        );
+
+
+                        mobileMenuButton.classList.remove(
+                            'active'
+                        );
+
+
+                        mobileMenuButton.setAttribute(
+                            'aria-expanded',
+                            'false'
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
